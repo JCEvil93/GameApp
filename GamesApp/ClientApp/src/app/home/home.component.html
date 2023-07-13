@@ -8,8 +8,11 @@
             <h2>Game list</h2>
         </div>
         <div class="wrapper">
-            <widget imgSrc="https://i0.wp.com/www.gamerfocus.co/wp-content/uploads/2015/10/halo_01.jpg?w=994&ssl=1"
-                    title="Halo Combat Evolved" text="Shooter"></widget>
+            <div *ngFor="let game of games">
+                <widget [imgSrc]="game.imgUrl"
+                        [title]="game.name" [text]="game.desc"></widget>
+            </div>
+            
         </div>
     </div>
 </body>
