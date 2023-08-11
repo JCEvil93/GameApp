@@ -21,5 +21,11 @@ code {
 
 body {
   background: #151929;
+  overflow-x: hidden;
 }
+
+/* ver las lineas de los elementos en unas dimeciones dadas */
+/* * {
+  outline: 1px solid red;
+} */
 
