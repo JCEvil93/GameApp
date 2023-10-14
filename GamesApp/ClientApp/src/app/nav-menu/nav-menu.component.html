@@ -1,45 +1,34 @@
 <header>
-  <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
-  >
-    <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">GamesApp</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target=".navbar-collapse"
-        aria-label="Toggle navigation"
-        [attr.aria-expanded]="isExpanded"
-        (click)="toggle()"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div
-        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
-        [ngClass]="{ show: isExpanded }"
-      >
-        <ul class="navbar-nav flex-grow">
-          <li
-            class="nav-item"
-            [routerLinkActive]="['link-active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a class="nav-link" [routerLink]="['/']">Home</a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link" [routerLink]="['/counter']"
-              >Counter</a
-            >
-          </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link" [routerLink]="['/fetch-data']"
-              >Fetch data</a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <nav class="NavigationBar">
+        <div class="NavigationBar-container">
+            <div class="NavigationBar-brandContainer">
+                <a class="NavigationBar-brand" [routerLink]="['/']">GamesApp</a>
+                <div id="hamburger" class="NavigationBar-hamburgerContainer">
+                    <div class="NavigationBar-hamburger">
+                        <div class="NavigationBar-hamburgerLine"></div>
+                        <div class="NavigationBar-hamburgerLine"></div>
+                        <div class="NavigationBar-hamburgerLine"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="NavigationBar-menuContainer">
+                <ul class="NavigationBar-menu">
+                    <li class="NavigationBar-menuList"
+                        [routerLinkActive]="['link-active']"
+                        [routerLinkActiveOptions]="{ exact: true }">
+                        <a [routerLink]="['/']">Home</a>
+                    </li>
+                    <li class="NavigationBar-menuList" [routerLinkActive]="['link-active']">
+                        <a [routerLink]="['/counter']">Counter</a>
+                    </li>
+                    <li class="NavigationBar-menuList" [routerLinkActive]="['link-active']">
+                        <a [routerLink]="['/fetch-data']">Fetch data</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
 </header>
 

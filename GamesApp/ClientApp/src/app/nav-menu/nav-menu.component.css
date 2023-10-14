@@ -1,30 +1,184 @@
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-  color:white;
+:root {
+  --color-primary: #7f5af0;
+  --color-secondary: #72757e;
+  --color-tertiary: #2cb67d;
+  --white: #fffffe;
+  --black: #000000;
+  --cinder: #16161a;
+  --grey: #a7a9be;
+  --background: #16161a;
+  --font-size-base: 10px;
+  --font-family: "Lato","Helvetica Neue", Helvetica,Arial,sans-serif;
+  --font-family-fontawesome: "Font Awesome 5 Free", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-color-heading: var(--white);
+  --font-color-paragraph: var(--grey);
+  --font-size-small: 1.5rem;
+  --padding-base: 10px;
+  --z-index-base: 1030;
+  --grid-breakpoints-xs: 0;
+  --grid-breakpoints-sm: 576px;
+  --grid-breakpoints-md: 768px;
+  --grid-breakpoints-lg: 992px;
+  --grid-breakpoints-xl: 1200px;
+  --grid-breakpoints-xxl: 1400px;
+  --max-width-container: 1170px;
 }
 
-html {
-  font-size: 14px;
+.NavigationBar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #16161a;
+  font-family: #fffffe;
+  font-weight: bold;
+  transform: translate3d(0, 0, 0);
+  z-index: 1030;
 }
+
+.NavigationBar-brandContainer,
+.NavigationBar-menuContainer {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.NavigationBar-brandContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.NavigationBar-menuContainer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all .1s cubic-bezier(.4, 0, 1, 1);
+}
+
+.NavigationBar-menuContainer--show {
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 10%);
+  max-height: 15rem;
+  transition: max-height .6s cubic-bezier(.4, 0, 1, 1);
+}
+
+.NavigationBar-brand {
+  color: #fffffe;
+  display: block;
+  font-size: 1.9rem;
+  font-weight: bold;
+  padding: 1.5rem 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+  .NavigationBar-brand:hover,
+  .NavigationBar-menuList > a:hover {
+    color: #72757e;
+  }
+
+.NavigationBar-hamburgerContainer {
+  border: 0.1rem solid #7f5af0;
+  border-radius: 0.4rem;
+  padding: 0.5rem;
+  width: 3.2rem;
+}
+
+  .NavigationBar-hamburgerContainer:hover {
+    background-color: #7f5af0;
+    cursor: pointer;
+  }
+
+.NavigationBar-hamburgerContainer--activate {
+  background-color: #7f5af0;
+}
+
+.NavigationBar-hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+
+.NavigationBar-hamburgerLine {
+  background-color: #fffffe;
+  border-radius: 0.4rem;
+  height: 0.3rem;
+  transition: all 0.2s;
+  transform-origin: left;
+}
+
+.NavigationBar-hamburgerContainer--activate .NavigationBar-hamburger {
+  transform: translateX(0.3rem);
+}
+
+.NavigationBar-hamburgerContainer--activate .NavigationBar-hamburgerLine:first-child {
+  transform: rotate(45deg);
+}
+
+.NavigationBar-hamburgerContainer--activate .NavigationBar-hamburgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.NavigationBar-hamburgerContainer--activate .NavigationBar-hamburgerLine:last-child {
+  transform: rotate(-45deg);
+}
+
+.NavigationBar-menu {
+  padding: 1rem 0;
+}
+
+.NavigationBar-menuList {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1rem 0;
+}
+
+  .NavigationBar-menuList > a {
+    color: #fffffe;
+    display: block;
+    text-decoration: none;
+  }
+
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
+
+  .NavigationBar-menuContainer--show {
+    box-shadow: none;
+  }
+
+  .NavigationBar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+  }
+
+  .NavigationBar-brandContainer {
+    border-bottom: 0;
+  }
+
+  .NavigationBar-brand {
+    font-size: 3rem;
+  }
+
+  .NavigationBar-hamburgerContainer {
+    display: none;
+  }
+
+  .NavigationBar-menuContainer {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .NavigationBar-menu {
+    display: flex;
+    gap: 3rem;
   }
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
 
-.navbar {
-  background: #1C2032 !important;
-  padding: 5px 0;
-  color: white;
+@media (min-width: 1200px) {
+  .NavigationBar-container,
+  .Header-container {
+    margin: 0 auto;
+    max-width: 1170px;
+  }
 }
-
-a.nav-link {
-    color:white
-}
-
