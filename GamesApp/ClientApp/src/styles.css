@@ -1,5 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --color-primary: #7f5af0;
+  --color-secondary: #72757e;
+  --color-tertiary: #2cb67d;
+  --white: #fffffe;
+  --black: #000000;
+  --cinder: #16161a;
+  --grey: #a7a9be;
+  --background: #16161a;
+  --font-size-base: 10px;
+  --font-family: "Lato","Helvetica Neue", Helvetica,Arial,sans-serif;
+  --font-family-fontawesome: "Font Awesome 5 Free", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-color-heading: var(--white);
+  --font-color-paragraph: var(--grey);
+  --font-size-small: 1.5rem;
+  --padding-base: 10px;
+  --z-index-base: 1030;
+  --grid-breakpoints-xs: 0;
+  --grid-breakpoints-sm: 576px;
+  --grid-breakpoints-md: 768px;
+  --grid-breakpoints-lg: 992px;
+  --grid-breakpoints-xl: 1200px;
+  --grid-breakpoints-xxl: 1400px;
+  --max-width-container: 1170px;
 
+  --nav-bar-height : 80px;
+}
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;
@@ -21,6 +47,7 @@ code {
 
 body {
   background: #151929;
+  font-family: var(--font-family);
   overflow-x: hidden;
 }
 

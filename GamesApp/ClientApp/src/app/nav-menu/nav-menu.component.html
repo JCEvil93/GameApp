@@ -3,7 +3,7 @@
         <div class="NavigationBar-container">
             <div class="NavigationBar-brandContainer">
                 <a class="NavigationBar-brand" [routerLink]="['/']">GamesApp</a>
-                <div id="hamburger" class="NavigationBar-hamburgerContainer">
+                <div id="hamburger" class="NavigationBar-hamburgerContainer"  (click)="toggle()">
                     <div class="NavigationBar-hamburger">
                         <div class="NavigationBar-hamburgerLine"></div>
                         <div class="NavigationBar-hamburgerLine"></div>
@@ -12,7 +12,7 @@
                 </div>
             </div>
 
-            <div class="NavigationBar-menuContainer">
+            <div class="NavigationBar-menuContainer" [class.NavigationBar-menuContainer--show] = "isExpanded === true">
                 <ul class="NavigationBar-menu">
                     <li class="NavigationBar-menuList"
                         [routerLinkActive]="['link-active']"

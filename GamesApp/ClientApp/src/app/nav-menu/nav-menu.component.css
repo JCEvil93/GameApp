@@ -1,39 +1,12 @@
-:root {
-  --color-primary: #7f5af0;
-  --color-secondary: #72757e;
-  --color-tertiary: #2cb67d;
-  --white: #fffffe;
-  --black: #000000;
-  --cinder: #16161a;
-  --grey: #a7a9be;
-  --background: #16161a;
-  --font-size-base: 10px;
-  --font-family: "Lato","Helvetica Neue", Helvetica,Arial,sans-serif;
-  --font-family-fontawesome: "Font Awesome 5 Free", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-color-heading: var(--white);
-  --font-color-paragraph: var(--grey);
-  --font-size-small: 1.5rem;
-  --padding-base: 10px;
-  --z-index-base: 1030;
-  --grid-breakpoints-xs: 0;
-  --grid-breakpoints-sm: 576px;
-  --grid-breakpoints-md: 768px;
-  --grid-breakpoints-lg: 992px;
-  --grid-breakpoints-xl: 1200px;
-  --grid-breakpoints-xxl: 1400px;
-  --max-width-container: 1170px;
-}
-
 .NavigationBar {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  background-color: #16161a;
-  font-family: #fffffe;
+  background-color: darkorange; /*TODO: Change this color*/
+  height: var(--nav-bar-height);
   font-weight: bold;
-  transform: translate3d(0, 0, 0);
-  z-index: 1030;
+  z-index: var(--z-index-base);
 }
 
 .NavigationBar-brandContainer,
@@ -58,6 +31,7 @@
   box-shadow: inset 0 1px 0 rgb(255 255 255 / 10%);
   max-height: 15rem;
   transition: max-height .6s cubic-bezier(.4, 0, 1, 1);
+  background-color: darkorange; /*TODO: Change this color*/
 }
 
 .NavigationBar-brand {
@@ -71,8 +45,9 @@
 }
 
   .NavigationBar-brand:hover,
+  .NavigationBar-menuList.link-active > a,
   .NavigationBar-menuList > a:hover {
-    color: #72757e;
+    color: #7f5af0; /* TODO: Change color */
   }
 
 .NavigationBar-hamburgerContainer {
@@ -130,6 +105,7 @@
   font-weight: bold;
   text-transform: uppercase;
   padding: 1rem 0;
+  list-style: none;
 }
 
   .NavigationBar-menuList > a {
@@ -138,8 +114,8 @@
     text-decoration: none;
   }
 
-@media (min-width: 768px) {
 
+@media (min-width: 768px) {
   .NavigationBar-menuContainer--show {
     box-shadow: none;
   }
@@ -148,7 +124,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 0;
   }
 
   .NavigationBar-brandContainer {

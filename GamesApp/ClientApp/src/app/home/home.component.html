@@ -1,17 +1,13 @@
-<body>
-    <h1>Welcome to the Games App</h1>
+<h1>Welcome to the Games App</h1>
 
-    <banner></banner>
+<banner></banner>
 
-    <div class="contents">
-        <div class="sectionTitle">
-            <h2>Game list</h2>
-        </div>
-        <div class="wrapper">
-            <widget *ngFor="let game of games" [imgSrc]="game.imgUrl"
-                    [title]="game.name" [text]="game.desc"></widget>
-            
-        </div>
+<div class="contents">
+    <div class="sectionTitle">
+        <h2>Game list</h2>
     </div>
-</body>
-
+    <div class="wrapper">
+        <widget *ngFor="let game of games" [imgSrc]="game.imgUrl"
+        [title]="game.name" [text]="game.desc"></widget>
+    </div>
+</div>
